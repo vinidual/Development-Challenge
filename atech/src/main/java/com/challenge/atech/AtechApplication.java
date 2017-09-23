@@ -9,4 +9,5 @@ public class AtechApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(AtechApplication.class, args);
 	}
+	
 }
