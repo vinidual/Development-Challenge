@@ -6,7 +6,7 @@ import com.challenge.atech.entity.City;
 
 public interface CityService { 
 	
-	City getEmployeeById(long id);
+	City getCityById(long id);
 	
-	List<City> getAllEmployees();
+	List<City> getAllCities();
 }

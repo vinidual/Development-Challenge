@@ -25,19 +25,15 @@ public class Flight {
 	private Date landingTime;
 	
 	@ManyToOne
-	@Column(nullable = false)
 	private City originCity;
 	
 	@ManyToOne
-	@Column(nullable = false)
 	private City destinyCity;
 	
 	@ManyToOne
-	@Column(nullable = false)
 	private Airplane airplane;
 	
 	@ManyToOne
-	@Column(nullable = false)
 	private Pilot pilot;
 	
 	@Column(nullable = false)

@@ -6,7 +6,7 @@ import com.challenge.atech.entity.Airplane;
 
 public interface AirplaneService { 
 	
-	Airplane getEmployeeById(long id);
+	Airplane getAirplaneById(long id);
 	
-	List<Airplane> getAllEmployees();
+	List<Airplane> getAllAirplanes();
 }
