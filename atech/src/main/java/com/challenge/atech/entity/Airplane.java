@@ -22,13 +22,13 @@ public class Airplane {
 	private double cargoCapacity;
 	
 	@Column(nullable = false)
-	private String passengerCapacity;
+	private int passengerCapacity;
 
 	public Airplane() {
 		super();
 	}
 
-	public Airplane(Long id, String company, String model, double cargoCapacity, String passengerCapacity) {
+	public Airplane(Long id, String company, String model, double cargoCapacity, int passengerCapacity) {
 		super();
 		this.id = id;
 		this.company = company;
@@ -69,11 +69,11 @@ public class Airplane {
 		this.cargoCapacity = cargoCapacity;
 	}
 
-	public String getPassengerCapacity() {
+	public int getPassengerCapacity() {
 		return passengerCapacity;
 	}
 
-	public void setPassengerCapacity(String passengerCapacity) {
+	public void setPassengerCapacity(int passengerCapacity) {
 		this.passengerCapacity = passengerCapacity;
 	}
 	

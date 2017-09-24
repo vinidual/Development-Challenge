@@ -8,13 +8,13 @@ public class AirplaneModel {
 
 	private double cargoCapacity;
 
-	private String passengerCapacity;
+	private int passengerCapacity;
 
 	public AirplaneModel() {
 		super();
 	}
 
-	public AirplaneModel(String company, String model, double cargoCapacity, String passengerCapacity) {
+	public AirplaneModel(String company, String model, double cargoCapacity, int passengerCapacity) {
 		super();
 		this.company = company;
 		this.model = model;
@@ -46,11 +46,11 @@ public class AirplaneModel {
 		this.cargoCapacity = cargoCapacity;
 	}
 
-	public String getPassengerCapacity() {
+	public int getPassengerCapacity() {
 		return passengerCapacity;
 	}
 
-	public void setPassengerCapacity(String passengerCapacity) {
+	public void setPassengerCapacity(int passengerCapacity) {
 		this.passengerCapacity = passengerCapacity;
 	}
 	

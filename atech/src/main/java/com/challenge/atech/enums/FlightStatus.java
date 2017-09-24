@@ -3,7 +3,7 @@ package com.challenge.atech.enums;
 public enum FlightStatus {
 	OnGroundParked,
 	OnGroundParking,
-	OnGrounTakingOff,
+	OnGroundTakingOff,
 	OnAirToDestiny,
 	OnAirCommunicatingProblems,
 	OnAirEmergencyLanding,
