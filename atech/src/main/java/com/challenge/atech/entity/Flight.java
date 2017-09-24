@@ -1,7 +1,7 @@
 
 package com.challenge.atech.entity;
 
-import java.util.Date;
+import java.text.SimpleDateFormat;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -19,10 +19,10 @@ public class Flight {
 	private Long id;
 	
 	@Column(nullable = false)
-	private Date takeoffTime;
+	private SimpleDateFormat takeoffTime;
 	
 	@Column(nullable = false)
-	private Date landingTime;
+	private SimpleDateFormat landingTime;
 	
 	@ManyToOne
 	private City originCity;
@@ -44,7 +44,7 @@ public class Flight {
 	}
 
 	public Flight(
-		Date takeoffTime, Date landingTime, City originCity, City destinyCity, Airplane airplane, Pilot pilot, FlightStatus flightStatus) 
+		SimpleDateFormat takeoffTime, SimpleDateFormat landingTime, City originCity, City destinyCity, Airplane airplane, Pilot pilot, FlightStatus flightStatus) 
 	{
 		super();
 		this.takeoffTime = takeoffTime;
@@ -64,19 +64,19 @@ public class Flight {
 		this.id = id;
 	}
 
-	public Date getTakeoffTime() {
+	public SimpleDateFormat getTakeoffTime() {
 		return takeoffTime;
 	}
 
-	public void setTakeoffTime(Date takeoffTime) {
+	public void setTakeoffTime(SimpleDateFormat takeoffTime) {
 		this.takeoffTime = takeoffTime;
 	}
 
-	public Date getLandingTime() {
+	public SimpleDateFormat getLandingTime() {
 		return landingTime;
 	}
 
-	public void setLandingTime(Date landingTime) {
+	public void setLandingTime(SimpleDateFormat landingTime) {
 		this.landingTime = landingTime;
 	}
 

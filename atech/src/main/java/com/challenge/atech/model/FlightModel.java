@@ -1,15 +1,18 @@
 
 package com.challenge.atech.model;
 
-import java.util.Date;
+import java.text.SimpleDateFormat;
 
+import com.challenge.atech.entity.Airplane;
+import com.challenge.atech.entity.City;
+import com.challenge.atech.entity.Pilot;
 import com.challenge.atech.enums.FlightStatus;
 
 public class FlightModel {
 	
-	private Date takeoffTime;
+	private SimpleDateFormat takeoffTime;
 	
-	private Date landingTime;
+	private SimpleDateFormat landingTime;
 	
 	private CityModel originCity;
 	
@@ -26,7 +29,7 @@ public class FlightModel {
 	}
 
 	public FlightModel(
-		Date takeoffTime, Date landingTime, CityModel originCity, 
+		SimpleDateFormat takeoffTime, SimpleDateFormat landingTime, CityModel originCity, 
 		CityModel destinyCity, AirplaneModel airplane, PilotModel pilot, FlightStatus flightStatus) 
 	{
 		super();
@@ -39,19 +42,19 @@ public class FlightModel {
 		this.flightStatus = flightStatus;
 	}
 
-	public Date getTakeoffTime() {
+	public SimpleDateFormat getTakeoffTime() {
 		return takeoffTime;
 	}
 
-	public void setTakeoffTime(Date takeoffTime) {
+	public void setTakeoffTime(SimpleDateFormat takeoffTime) {
 		this.takeoffTime = takeoffTime;
 	}
 
-	public Date getLandingTime() {
+	public SimpleDateFormat getLandingTime() {
 		return landingTime;
 	}
 
-	public void setLandingTime(Date landingTime) {
+	public void setLandingTime(SimpleDateFormat landingTime) {
 		this.landingTime = landingTime;
 	}
 

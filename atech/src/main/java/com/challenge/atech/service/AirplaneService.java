@@ -2,11 +2,18 @@ package com.challenge.atech.service;
 
 import java.util.List;
 
-import com.challenge.atech.entity.Airplane;
+import com.challenge.atech.model.AirplaneModel;
 
 public interface AirplaneService { 
 	
-	Airplane getAirplaneById(long id);
+	AirplaneModel getAirplaneById(long id);
 	
-	List<Airplane> getAllAirplanes();
+	List<AirplaneModel> getAllAirplanes();
+	
+	AirplaneModel saveAirplane(AirplaneModel airplane);
+	
+	AirplaneModel patchAirplane(long id, AirplaneModel airplane);
+	
+	void delete(long id);
+	
 }

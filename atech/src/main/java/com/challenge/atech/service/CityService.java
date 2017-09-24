@@ -2,11 +2,17 @@ package com.challenge.atech.service;
 
 import java.util.List;
 
-import com.challenge.atech.entity.City;
+import com.challenge.atech.model.CityModel;
 
 public interface CityService { 
 	
-	City getCityById(long id);
+	CityModel getCityById(long id);
 	
-	List<City> getAllCities();
+	List<CityModel> getAllCities();
+	
+	CityModel saveCity(CityModel city);
+	
+	CityModel patchCity(long id, CityModel city);
+	
+	void delete(long id);
 }
