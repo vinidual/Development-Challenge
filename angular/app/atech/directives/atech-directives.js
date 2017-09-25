@@ -4,7 +4,11 @@ angular.module('app.atech.directives', [])
     .directive('atech', function () {
 
         var link = function ($scope) {
-            console.log('directive');
+
+            $scope.setDetailInfo = function(flight){
+                $scope.flightDetail = flight;
+            };
+
         };
 
         return {

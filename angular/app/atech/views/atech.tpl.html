@@ -1,6 +1,169 @@
 
-<h2>Atech: Lista de Voos</h2>
+<div class="modal fade" id="detail" role="dialog">
+  <div class="modal-dialog" style="width:70%">
 
-<div ng-repeat="flight in listFlights">
-  {{flight}}
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Flight Details</h4>
+      </div>
+      <div class="modal-body row">
+
+        <div class="col-md-12">
+          <legend>Airplane</legend>
+        </div>
+        <div class="col-md-6">
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon-model">Model</span>
+            <input type="text" class="form-control" ng-model="flightDetail.airplane.model"
+              aria-describedby="basic-addon-model" readonly>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon-company">Company</span>
+            <input type="text" class="form-control" ng-model="flightDetail.airplane.company"
+              aria-describedby="basic-addon-company" readonly>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon-cargo">Cargo Capacity</span>
+            <input type="text" class="form-control" ng-model="flightDetail.airplane.cargoCapacity"
+              aria-describedby="basic-addon-cargo" readonly>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon-passenger">Passenger Capacity</span>
+            <input type="text" class="form-control" ng-model="flightDetail.airplane.passengerCapacity"
+              aria-describedby="basic-addon-passenger" readonly>
+          </div>
+        </div>
+
+        <div class="col-md-12" style="margin-top:20px">
+          <legend>Destiny City</legend>
+        </div>
+        <div class="col-md-4">
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon-country">Country</span>
+            <input type="text" class="form-control" ng-model="flightDetail.destinyCity.country"
+              aria-describedby="basic-addon-country" readonly>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon-name">Name</span>
+            <input type="text" class="form-control" ng-model="flightDetail.destinyCity.name"
+              aria-describedby="basic-addon-name" readonly>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon-state">State or Province</span>
+            <input type="text" class="form-control" ng-model="flightDetail.destinyCity.stateOrProvince"
+              aria-describedby="basic-addon-state" readonly>
+          </div>
+        </div>
+
+        <div class="col-md-12" style="margin-top:20px">
+          <legend>Origin City</legend>
+        </div>
+        <div class="col-md-4">
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon-country">Country</span>
+            <input type="text" class="form-control" ng-model="flightDetail.originCity.country"
+              aria-describedby="basic-addon-country" readonly>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon-name">Name</span>
+            <input type="text" class="form-control" ng-model="flightDetail.originCity.name"
+              aria-describedby="basic-addon-name" readonly>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon-state">State or Province</span>
+            <input type="text" class="form-control" ng-model="flightDetail.originCity.stateOrProvince"
+              aria-describedby="basic-addon-state" readonly>
+          </div>
+        </div>
+
+        <div class="col-md-12" style="margin-top:20px">
+          <legend>Pilot</legend>
+        </div>
+        <div class="col-md-4">
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon-company">Company</span>
+            <input type="text" class="form-control" ng-model="flightDetail.pilot.companyName"
+              aria-describedby="basic-addon-company" readonly>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon-licence">Licence</span>
+            <input type="text" class="form-control" ng-model="flightDetail.pilot.flightLicence"
+              aria-describedby="basic-addon-licence" readonly>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon-gender">Gender</span>
+            <input type="text" class="form-control" ng-model="flightDetail.pilot.gender"
+              aria-describedby="basic-addon-gender" readonly>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon-name">Name</span>
+            <input type="text" class="form-control" ng-model="flightDetail.pilot.name"
+              aria-describedby="basic-addon-name" readonly>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon-passport">Passport</span>
+            <input type="text" class="form-control" ng-model="flightDetail.pilot.passport"
+              aria-describedby="basic-addon-passport" readonly>
+          </div>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
 </div>
+
+<div class="alert alert-info">
+  <h2>Atech Development Challenge Test</h2>
+  Here you can see the flight list generated in-memory H2 database by spring boot application.
+</div>
+
+<table class="table table-striped">
+    <tr>
+        <th>Identification</th>
+        <th>Takeoff Time</th>
+        <th>Landing Time</th>
+        <th>Origin</th>
+        <th>Destiny</th>
+        <th>Status</th>
+        <th>Details</th>
+    </tr>
+    <tr ng-repeat="flight in listFlights">
+        <td>{{flight.id}}</td>
+        <td>{{flight.takeoffTime}}</td>
+        <td>{{flight.landingTime}}</td>
+        <td>{{flight.originCity.name}}</td>
+        <td>{{flight.destinyCity.name}}</td>
+        <td>{{flight.flightStatus}}</td>
+        <th><button type="button" class="btn btn-info" data-toggle="modal" data-target="#detail"
+          ng-click="setDetailInfo(flight)">
+          Open details</button>
+        </th>
+    </tr>
+</table>
