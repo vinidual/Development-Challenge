@@ -7,6 +7,8 @@ import com.challenge.atech.enums.FlightStatus;
 
 public class FlightModel {
 	
+	private long id;
+
 	private Date takeoffTime;
 	
 	private Date landingTime;
@@ -26,10 +28,11 @@ public class FlightModel {
 	}
 
 	public FlightModel(
-		Date takeoffTime, Date landingTime, CityModel originCity, 
+		long id, Date takeoffTime, Date landingTime, CityModel originCity, 
 		CityModel destinyCity, AirplaneModel airplane, PilotModel pilot, FlightStatus flightStatus) 
 	{
 		super();
+		this.id = id;
 		this.takeoffTime = takeoffTime;
 		this.landingTime = landingTime;
 		this.originCity = originCity;
@@ -37,6 +40,14 @@ public class FlightModel {
 		this.airplane = airplane;
 		this.pilot = pilot;
 		this.flightStatus = flightStatus;
+	}
+	
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
 	}
 
 	public Date getTakeoffTime() {

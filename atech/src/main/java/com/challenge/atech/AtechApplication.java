@@ -60,15 +60,17 @@ public class AtechApplication {
 			city2.setStateOrProvince("province1");
 			cityRepository.save(city2);
 			
-			Flight flight = new Flight();
-			flight.setAirplane(airplane);
-			flight.setDestinyCity(city1);
-			flight.setFlightStatus(FlightStatus.OnGroundTakingOff);
-			flight.setOriginCity(city2);
-			flight.setLandingTime(new Date());
-			flight.setTakeoffTime(new Date());
-			flight.setPilot(pilot);
-			flightRepository.save(flight);
+			for(int i = 0; i < 10; i++) {
+				Flight flight = new Flight();
+				flight.setAirplane(airplane);
+				flight.setDestinyCity(city1);
+				flight.setFlightStatus(FlightStatus.OnGroundTakingOff);
+				flight.setOriginCity(city2);
+				flight.setLandingTime(new Date());
+				flight.setTakeoffTime(new Date());
+				flight.setPilot(pilot);
+				flightRepository.save(flight);
+			}
 			
 		};
 	}

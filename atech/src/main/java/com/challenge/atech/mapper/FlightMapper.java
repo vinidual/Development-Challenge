@@ -10,6 +10,7 @@ public final class FlightMapper {
 	
 	public static FlightModel EntityToModel(Flight flight) {
 		FlightModel flightModel = new FlightModel(
+			flight.getId(),
 			flight.getTakeoffTime(), 
 			flight.getLandingTime(), 
 			CityMapper.EntityToModel(flight.getOriginCity()),

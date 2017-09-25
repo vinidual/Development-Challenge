@@ -61,7 +61,7 @@ public class AtechApplicationTests {
 	@Test
 	public void shouldExistsOneFlightRecord() {
 		List<Flight> listFlights = flightRepository.findAll();
-		assertEquals(listFlights.size(), 1);
+		assertEquals(listFlights.size(), 10);
 	}
 
 	
