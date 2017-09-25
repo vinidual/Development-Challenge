@@ -4,6 +4,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,6 +21,7 @@ public class CityController {
 	@Autowired
 	private CityService cityService;
 	
+	@CrossOrigin
     @RequestMapping(value = "/city", method = RequestMethod.GET)
     public ResponseEntity<?> getCitys() {
     	List<CityModel> listCities = cityService.getAllCities();
@@ -29,6 +31,7 @@ public class CityController {
     	return new ResponseEntity<List<CityModel>>(listCities, HttpStatus.OK);
 	}
 
+	@CrossOrigin
     @RequestMapping(value = "/city/{id}", method = RequestMethod.GET)
     public ResponseEntity<?> getCity(@PathVariable("id") long id) {
     	CityModel city = cityService.getCityById(id);
@@ -38,6 +41,7 @@ public class CityController {
     	return new ResponseEntity<CityModel>(city, HttpStatus.OK);
 	}
     
+	@CrossOrigin
     @RequestMapping(value = "/city", method = RequestMethod.POST)
     public ResponseEntity<?> saveCity(@RequestBody CityModel city) {
     	CityModel citySaved = cityService.saveCity(city);
@@ -47,6 +51,7 @@ public class CityController {
     	return new ResponseEntity<CityModel>(citySaved, HttpStatus.OK);
 	}
     
+	@CrossOrigin
     @RequestMapping(value = "/city/{id}", method = RequestMethod.PATCH)
     public ResponseEntity<?> patchCity(@PathVariable("id") long id, @RequestBody CityModel city) {
     	CityModel citySaved = cityService.patchCity(id, city);
@@ -56,6 +61,7 @@ public class CityController {
     	return new ResponseEntity<CityModel>(citySaved, HttpStatus.OK);
 	}
     
+	@CrossOrigin
     @RequestMapping(value = "/city/{id}", method = RequestMethod.DELETE)
     public ResponseEntity<?> deleteCity(@PathVariable("id") long id) {
     	cityService.delete(id);

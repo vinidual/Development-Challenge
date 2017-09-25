@@ -4,6 +4,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,6 +21,7 @@ public class FlightController {
 	@Autowired
 	private FlightService flightService;
 	
+	@CrossOrigin
     @RequestMapping(value = "/flight", method = RequestMethod.GET)
     public ResponseEntity<?> getFlights() {
     	List<FlightModel> listFlights = flightService.getAllFlights();
@@ -29,6 +31,7 @@ public class FlightController {
     	return new ResponseEntity<List<FlightModel>>(listFlights, HttpStatus.OK);
 	}
 
+	@CrossOrigin
     @RequestMapping(value = "/flight/{id}", method = RequestMethod.GET)
     public ResponseEntity<?> getFlight(@PathVariable("id") long id) {
     	FlightModel flight = flightService.getFlightById(id);
@@ -38,6 +41,7 @@ public class FlightController {
     	return new ResponseEntity<FlightModel>(flight, HttpStatus.OK);
 	}
     
+	@CrossOrigin
     @RequestMapping(value = "/flight", method = RequestMethod.POST)
     public ResponseEntity<?> saveFlight(@RequestBody FlightModel flight) {
     	FlightModel flightSaved = flightService.saveFlight(flight);
@@ -47,6 +51,7 @@ public class FlightController {
     	return new ResponseEntity<FlightModel>(flightSaved, HttpStatus.OK);
 	}
     
+	@CrossOrigin
     @RequestMapping(value = "/flight/{id}", method = RequestMethod.PATCH)
     public ResponseEntity<?> patchFlight(@PathVariable("id") long id, @RequestBody FlightModel flight) {
     	FlightModel flightSaved = flightService.patchFlight(id, flight);
@@ -56,6 +61,7 @@ public class FlightController {
     	return new ResponseEntity<FlightModel>(flightSaved, HttpStatus.OK);
 	}
     
+	@CrossOrigin
     @RequestMapping(value = "/flight/{id}", method = RequestMethod.DELETE)
     public ResponseEntity<?> deleteFlight(@PathVariable("id") long id) {
     	flightService.delete(id);
